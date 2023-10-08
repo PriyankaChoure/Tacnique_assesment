@@ -1,0 +1,8 @@
+.wrapper {
+  width: 20vw;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+}
