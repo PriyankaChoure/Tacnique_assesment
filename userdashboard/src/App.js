@@ -13,10 +13,21 @@ function App() {
   useEffect(() => {
     getUserData();
   }, []);
+
+  // delete user
+  const handleDelete = (user) => {
+    let userListTemp = users.filter((obj) => obj.id !== user.id);
+    setUsers(userListTemp);
+    console.log(userListTemp.length);
+    alert(`users deleted successfully`);
+  };
+
   return (
     <div className="wrapper">
       <h2>User Managment Dashboard</h2>
-      {users.length > 0 && <Dashboard users={users} />}
+      {users.length > 0 && (
+        <Dashboard users={users} handleDelete={handleDelete} />
+      )}
     </div>
   );
 }
